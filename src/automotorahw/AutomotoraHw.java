@@ -6,6 +6,10 @@ package automotorahw;
 
 import java.lang.reflect.Field;
 
+import factoryobjects.*;
+import models.*;
+import controllers.Application;
+
 /**
  *
  * @author rb__s
@@ -18,7 +22,11 @@ public class AutomotoraHw {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        FactoryModel FactorModel = new ClienteFactory();
         
+        Application App = new Application(FactorModel);
+        
+        App.printDat();
         
         
         

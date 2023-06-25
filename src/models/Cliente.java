@@ -4,20 +4,30 @@
  */
 package models;
 
+import conexion.ConexionSingleton;
+
 /**
  *
  * @author rb__s
  */
-public class Cliente {
+public class Cliente extends Model implements IModels {
     
     private String rut;
     private String nombre;
     private String apellido;
     
-    public Cliente(){}
+    public Cliente(){
+    
+      super();
+        
+        super.conexionDb();
+        
+    }
     
     public Cliente(String _rut, String _nombre, String _apellido){
     
+       
+        
         this.rut = _rut;
         this.apellido = _apellido;
         this.nombre = _nombre;
@@ -65,6 +75,22 @@ public class Cliente {
      */
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    @Override
+    public String getDates() {
+       
+        String dates_cliente = "name : " + this.nombre + this.apellido;
+        
+        return dates_cliente;
+       
+    }
+
+    @Override
+    public String getId() {
+    
+        return this.rut;
+    
     }
 
     
