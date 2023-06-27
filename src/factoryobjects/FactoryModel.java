@@ -15,5 +15,4 @@ public abstract class FactoryModel {
     public abstract IModels createModel();
     
     
-    
 }

@@ -4,6 +4,8 @@
  */
 package models;
 
+
+import java.sql.ResultSet;
 import conexion.ConexionSingleton;
 
 
@@ -29,6 +31,14 @@ public class Model {
           ConnDb.ConectarDb();
         
     
+    }
+    
+    protected ResultSet executerQry(String queryStr){
+        
+       ResultSet Rs = ConnDb.executeQry(queryStr);
+        
+        return Rs;
+        
     }
     
 }

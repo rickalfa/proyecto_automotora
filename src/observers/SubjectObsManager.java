@@ -41,7 +41,7 @@ public class SubjectObsManager implements ISubjectObs {
       
         for(IObserver observer : this.ObserversList){
         
-            observer.update(eventType);
+            observer.updateOB(eventType);
         }
     
     }

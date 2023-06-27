@@ -4,11 +4,13 @@
  */
 package models;
 
+import observers.IObserver;
+
 /**
  *
  * @author rb__s
  */
-public class Financiera {
+public class Financiera implements IObserver {
 
     
     private String nombre_financiera;
@@ -51,6 +53,13 @@ public class Financiera {
      */
     public void setPorcentaje_descuento(double porcentaje_descuento) {
         this.porcentaje_descuento = porcentaje_descuento;
+    }
+
+    @Override
+    public void updateOB(String eventType) {
+        
+        
+    
     }
     
  

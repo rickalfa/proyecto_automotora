@@ -4,13 +4,16 @@
  */
 package models;
 
+import java.util.ArrayList;
+import observers.IObserver;
+
 
 
 /**
  *
  * @author rb__s
  */
-public class Venta {
+public class Venta extends Model implements IModels, IObserver {
 
     private Cliente Cliente_venta;
     private int id_Venta;
@@ -20,6 +23,7 @@ public class Venta {
     
     public Venta(String Segmento_de_Vehiculo){
     
+            
         
     }
     
@@ -94,6 +98,67 @@ public class Venta {
      */
     public void setFinanciamiento(String financiamiento) {
         this.financiamiento = financiamiento;
+    }
+
+    @Override
+    public String getDates() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String getId() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean Update() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void create() {
+        
+       
+    
+    }
+
+    @Override
+    public ArrayList<String[]> select(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean delete() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void updateOB(String eventType) {
+        
+        switch(eventType){
+                
+                case "venta_done":
+                              
+                         System.out.print(" Compra Finalizada mensaje al cliente");
+        
+                     break;
+                
+                case "venta_efectivo":
+                    
+                          System.out.print(" Compra Finalizada mensaje al cliente");
+        
+                    
+                     break;
+                     
+                default:
+                         System.out.print(" Compra Cancelada");
+        
+                              
+                    break;
+        
+        }
+       
+   
     }
     
 

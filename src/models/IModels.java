@@ -4,6 +4,8 @@
  */
 package models;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author rb__s
@@ -13,5 +15,15 @@ public interface IModels {
     public String getDates();
     
     public String getId();
+    
+    public boolean Update();
+    
+    public void create();
+    
+    public ArrayList<String[]> select(int id); 
+    
+    public boolean delete();
+    
+    
     
 }

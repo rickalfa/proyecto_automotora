@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 
 import factoryobjects.*;
 import models.*;
-import controllers.Application;
+import controllers.ApplicationFacade;
 
 /**
  *
@@ -24,7 +24,7 @@ public class AutomotoraHw {
         
         FactoryModel FactorModel = new ClienteFactory();
         
-        Application App = new Application(FactorModel);
+        ApplicationFacade App = new ApplicationFacade(FactorModel);
         
         App.printDat();
         

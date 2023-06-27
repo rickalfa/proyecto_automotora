@@ -11,7 +11,7 @@ package observers;
 public class ClienteObserver implements IObserver {
 
     @Override
-    public void update(String eventType) {
+    public void updateOB(String eventType) {
       
         System.out.print("cliente observer Notificado");
     

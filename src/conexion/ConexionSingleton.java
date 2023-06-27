@@ -6,6 +6,12 @@ package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
+
+
 import java.util.logging.Level;
 
 
@@ -61,6 +67,30 @@ public class ConexionSingleton {
              
            return Conn;  
     
+    }
+    
+    public ResultSet executeQry(String query){
+    
+        
+        try{
+            PreparedStatement psmt = Conn.prepareStatement(query);
+        
+            ResultSet rs = psmt.executeQuery();
+            
+            return rs;
+            
+      
+        
+        }catch(Exception ex){
+        
+            ex.printStackTrace();
+            
+            return null;
+            
+        }
+        
+        
+        
     }
     
     private static void desconectarDb(){

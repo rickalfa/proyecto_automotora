@@ -4,13 +4,18 @@
  */
 package models;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
 import conexion.ConexionSingleton;
+import observers.IObserver;
+
 
 /**
  *
  * @author rb__s
  */
-public class Cliente extends Model implements IModels {
+public class Cliente extends Model implements IModels, IObserver {
     
     private String rut;
     private String nombre;
@@ -20,7 +25,9 @@ public class Cliente extends Model implements IModels {
     
       super();
         
-        super.conexionDb();
+      super.conexionDb();
+        
+    
         
     }
     
@@ -91,6 +98,82 @@ public class Cliente extends Model implements IModels {
     
         return this.rut;
     
+    }
+
+    @Override
+    public boolean Update() {
+
+        
+        
+        return true;
+    
+    }
+
+    
+    @Override
+    public void create() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public ArrayList<String[]> select(int id) {
+
+        String query;
+        
+        ArrayList<String[]> Clientes_ar = new ArrayList<String[]>();
+        
+         try{
+             
+              if(id == 0 || id < 0){
+                
+               query = "SELECT * FROM cliente";
+         
+              }else{
+        
+               query = "SELECT * FROM cliente WHERE id="+id;
+         
+        
+              }
+         
+          ResultSet rs = super.executerQry(query);
+         
+                while(rs.next()){
+              
+                    String nombre = rs.getString("nombre");
+                     String rut = rs.getString("rut");
+                     String apellido = rs.getString("apellido");
+                    
+                    String[] Clienteadd = {rut, nombre, apellido};
+                    
+                    Clientes_ar.add(Clienteadd);
+                    
+             
+         
+                }
+                
+                return Clientes_ar;
+                
+                
+                
+          }catch(Exception ex){
+          
+              ex.printStackTrace();
+              
+              return null;
+              
+          }
+        
+    
+    }
+
+    @Override
+    public boolean delete() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void updateOB(String eventType) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     
