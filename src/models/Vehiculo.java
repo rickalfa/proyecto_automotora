@@ -132,7 +132,7 @@ public class Vehiculo extends Model implements IModels, IObserver {
          
               }else{
         
-               query = "SELECT * FROM vehiculo WHERE id="+id;
+               query = "SELECT * FROM vehiculo WHERE id_vehiculo="+id;
          
         
               }
@@ -141,12 +141,14 @@ public class Vehiculo extends Model implements IModels, IObserver {
          
                 while(rs.next()){
               
-                    String patente = rs.getString("patente");
+                     String id_v = String.valueOf( rs.getInt("id_vehiculo"));
+                     String patente = rs.getString("patente");
                      String marca = rs.getString("marca");
-                     String valor = rs.getString("valor");
+                     String valor = String.valueOf( rs.getDouble("valor"));
                      String modelo = rs.getString("modelo");
+                     
                     
-                    String[] vehiculoadd = {patente, marca, valor, modelo};
+                    String[] vehiculoadd = {id_v, patente, marca, valor, modelo};
                     
                     vehiculos_ar.add(vehiculoadd);
                     
@@ -175,9 +177,7 @@ public class Vehiculo extends Model implements IModels, IObserver {
 
     @Override
     public void updateOB(String eventType) {
-    
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
+    System.out.print(" vehiculo NOtificado");
     
     }
     

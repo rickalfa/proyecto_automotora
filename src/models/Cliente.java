@@ -139,11 +139,12 @@ public class Cliente extends Model implements IModels, IObserver {
          
                 while(rs.next()){
               
+                     String id_client = String.valueOf( rs.getString("id"));
                     String nombre = rs.getString("nombre");
                      String rut = rs.getString("rut");
                      String apellido = rs.getString("apellido");
                     
-                    String[] Clienteadd = {rut, nombre, apellido};
+                    String[] Clienteadd = {id_client, rut, nombre, apellido};
                     
                     Clientes_ar.add(Clienteadd);
                     
@@ -173,7 +174,10 @@ public class Cliente extends Model implements IModels, IObserver {
 
     @Override
     public void updateOB(String eventType) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+     System.out.print(" Cliente NOtificado");
+    
+    
     }
 
     

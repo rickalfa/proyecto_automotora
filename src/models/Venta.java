@@ -23,11 +23,10 @@ public class Venta extends Model implements IModels, IObserver {
     
     public Venta(String Segmento_de_Vehiculo){
     
+        
             
         
     }
-    
-    
     
     
     /**
@@ -139,7 +138,10 @@ public class Venta extends Model implements IModels, IObserver {
                 
                 case "venta_done":
                               
-                         System.out.print(" Compra Finalizada mensaje al cliente");
+                         System.out.print(" Compra Finalizada mensaje al cliente ");
+                         
+                         
+                         
         
                      break;
                 

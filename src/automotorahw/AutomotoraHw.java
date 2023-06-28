@@ -26,7 +26,7 @@ public class AutomotoraHw {
         
         ApplicationFacade App = new ApplicationFacade(FactorModel);
         
-        App.printDat();
+        App.ventaVehiculo();
         
         
         
